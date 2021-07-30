@@ -102,7 +102,6 @@ func InitN3IWFContext() bool {
 		n3iwfContext.IKEBindAddress = factory.N3iwfConfig.Configuration.IKEBindAddr
 	}
 
-
 	// IKE bind address
 	if factory.N3iwfConfig.Configuration.IKEBindAddr == "" {
 		contextLog.Error("IKE bind address is empty")

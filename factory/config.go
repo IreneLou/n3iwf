@@ -25,10 +25,10 @@ type Info struct {
 }
 
 type Configuration struct {
-	N3IWFInfo        context.N3IWFNFInfo        `yaml:"N3IWFInformation"`
-	AMFSCTPAddresses []context.AMFSCTPAddresses `yaml:"AMFSCTPAddresses"`
+	N3IWFInfo         context.N3IWFNFInfo         `yaml:"N3IWFInformation"`
+	AMFSCTPAddresses  []context.AMFSCTPAddresses  `yaml:"AMFSCTPAddresses"`
+	SCTPBindAddresses []context.SCTPBindAddresses `yaml:"SCTPBindAddresses"` // N3IWF local address
 
-	SCTPBindAddresses    []context.SCTPBindAddresses `yaml:"SCTPBindAddresses"` // N3IWF local address
 	IKEBindAddr          string `yaml:"IKEBindAddress"`
 	IPSecGatewayAddr     string `yaml:"IPSecInterfaceAddress"`
 	GTPBindAddr          string `yaml:"GTPBindAddress"`
