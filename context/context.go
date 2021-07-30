@@ -54,7 +54,8 @@ type N3IWFContext struct {
 	// Network interface mark for xfrm
 	Mark uint32
 
-	// N3IWF local address
+	// N3IWF local addresses
+	SCTPBindAddresses   []*sctp.SCTPAddr
 	IKEBindAddress      string
 	IPSecGatewayAddress string
 	GTPBindAddress      string
