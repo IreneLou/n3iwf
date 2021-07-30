@@ -25,20 +25,22 @@ func init() {
 func Run() error {
 	// n3iwf context
 	n3iwfSelf := context.N3IWFSelf()
+
 	// load amf SCTP address slice
 	amfSCTPAddresses := n3iwfSelf.AMFSCTPAddresses
-
-	localAddr := new(sctp.SCTPAddr)
+	localSCTPAddresses := n3iwfSelf.SCTPBindAddresses
 
 	for _, remoteAddr := range amfSCTPAddresses {
 		errChan := make(chan error)
-		go listenAndServe(localAddr, remoteAddr, errChan)
-		if err, ok := <-errChan; ok {
-			ngapLog.Errorln(err)
-			return errors.New("NGAP service run failed")
+		for _, localAddr := range localSCTPAddresses {
+			ngapLog.Infof("[N3IWF Addr] local Addr: %+v", localAddr)
+			go listenAndServe(localAddr, remoteAddr, errChan)
+			if err, ok := <-errChan; ok {
+				ngapLog.Errorln(err)
+				return errors.New("NGAP service run failed")
+			}
 		}
 	}
-
 	return nil
 }
 

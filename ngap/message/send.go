@@ -31,7 +31,7 @@ func SendNGSetupRequest(conn *sctp.SCTPConn) {
 	ngaplog.Infoln("[N3IWF] Send NG Setup Request")
 
 	sctpAddr := conn.RemoteAddr().String()
-
+	ngaplog.Infof("[N3IWF] SCTP Addr: [%s]", sctpAddr)
 	if available, _ := context.N3IWFSelf().AMFReInitAvailableListLoad(sctpAddr); !available {
 		ngaplog.Warnf("[N3IWF] Please Wait at least for the indicated time before reinitiating toward same AMF[%s]", sctpAddr)
 		return
