@@ -55,7 +55,7 @@ type N3IWFContext struct {
 	Mark uint32
 
 	// N3IWF local addresses
-	SCTPBindAddresses   []*sctp.SCTPAddr
+	SCTPBindAddress     *sctp.SCTPAddr
 	IKEBindAddress      string
 	IPSecGatewayAddress string
 	GTPBindAddress      string

@@ -40,7 +40,7 @@ type AMFSCTPAddresses struct {
 	Port        int      `yaml:"Port,omitempty"`
 }
 
-type SCTPBindAddresses struct {
-	IPAddresses []string `yaml:"IP"`
+type SCTPBindAddress struct {
+	IPAddress   string   `yaml:"IP"`
 	Port        int      `yaml:"Port,omitempty"`
 }
