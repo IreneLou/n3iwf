@@ -72,24 +72,25 @@ func InitN3IWFContext() bool {
 		contextLog.Error("No Local SCTP Address specified")
 		return false
 	} else {
-		SCTPBindAddress := factory.N3iwfConfig.Configuration.SCTPBindAddress
-		SCTPBindAddr := new(sctp.SCTPAddr)
-		// IP address
-		ipAddrStr := SCTPBindAddress.IPAddress
-		if ipAddr, err := net.ResolveIPAddr("ip", ipAddrStr); err != nil {
-			contextLog.Errorf("Resolve Local IP address failed: %+v", err)
-			return false
-		} else {
-			SCTPBindAddr.IPAddrs = append(SCTPBindAddr.IPAddrs, *ipAddr)
+		for _, SCTPBindAddress := range factory.N3iwfConfig.Configuration.SCTPBindAddress {
+			SCTPBindAddr := new(sctp.SCTPAddr)
+			// IP address
+			ipAddrStr := SCTPBindAddress.IPAddress
+			if ipAddr, err := net.ResolveIPAddr("ip", ipAddrStr); err != nil {
+				contextLog.Errorf("Resolve Local IP address failed: %+v", err)
+				return false
+			} else {
+				SCTPBindAddr.IPAddrs = append(SCTPBindAddr.IPAddrs, *ipAddr)
+			}
+			// Port
+			if SCTPBindAddress.Port == 0 {
+				SCTPBindAddr.Port = 38412
+			} else {
+				SCTPBindAddr.Port = SCTPBindAddress.Port
+			}
+			// Append to context
+			n3iwfContext.SCTPBindAddress = SCTPBindAddr
 		}
-		// Port
-		if SCTPBindAddress.Port == 0 {
-			SCTPBindAddr.Port = 38412
-		} else {
-			SCTPBindAddr.Port = SCTPBindAddress.Port
-		}
-		// Append to context
-		n3iwfContext.SCTPBindAddress = SCTPBindAddr
 	}
 
 	// IKE bind address
