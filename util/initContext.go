@@ -81,7 +81,6 @@ func InitN3IWFContext() bool {
 				return false
 			} else {
 				SCTPBindAddr.IPAddrs = append(SCTPBindAddr.IPAddrs, *ipAddr)
-			}
 			// Port
 			if SCTPBindAddress.Port == 0 {
 				SCTPBindAddr.Port = 38412
