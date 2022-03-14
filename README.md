@@ -1,4 +1,4 @@
-# n3iwf
+# N3IWF安裝流程
 1. 安裝ubuntu 18.04 server
 ```
 [non passwd]
