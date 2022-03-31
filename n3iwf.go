@@ -7,9 +7,8 @@ import (
 	"github.com/sirupsen/logrus"
 	"github.com/urfave/cli"
 
-	"github.com/free5gc/n3iwf/logger"
-	"github.com/free5gc/n3iwf/service"
-	"github.com/free5gc/version"
+	"github.com/IreneLou/n3iwf/logger"
+	"github.com/IreneLou/n3iwf/service"
 )
 
 var N3IWF = &service.N3IWF{}

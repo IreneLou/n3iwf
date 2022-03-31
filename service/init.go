@@ -9,17 +9,17 @@ import (
 	"github.com/sirupsen/logrus"
 	"github.com/urfave/cli"
 
-	aperLogger "github.com/free5gc/aper/logger"
-	"github.com/free5gc/n3iwf/factory"
-	ike_service "github.com/free5gc/n3iwf/ike/service"
-	"github.com/free5gc/n3iwf/logger"
-	ngap_service "github.com/free5gc/n3iwf/ngap/service"
-	nwucp_service "github.com/free5gc/n3iwf/nwucp/service"
-	nwuup_service "github.com/free5gc/n3iwf/nwuup/service"
-	"github.com/free5gc/n3iwf/util"
-	ngapLogger "github.com/free5gc/ngap/logger"
-	"github.com/free5gc/path_util"
-	pathUtilLogger "github.com/free5gc/path_util/logger"
+	aperLogger "github.com/IreneLou/aper/logger"
+	"github.com/IreneLou/n3iwf/factory"
+	ike_service "github.com/IreneLou/n3iwf/ike/service"
+	"github.com/IreneLou/n3iwf/logger"
+	ngap_service "github.com/IreneLou/n3iwf/ngap/service"
+	nwucp_service "github.com/IreneLou/n3iwf/nwucp/service"
+	nwuup_service "github.com/IreneLou/n3iwf/nwuup/service"
+	"github.com/IreneLou/n3iwf/util"
+	ngapLogger "github.com/IreneLou/ngap/logger"
+	"github.com/IreneLou/path_util"
+	pathUtilLogger "github.com/IreneLou/path_util/logger"
 )
 
 type N3IWF struct{}
