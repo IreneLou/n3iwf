@@ -23,7 +23,6 @@ func main() {
 	app := cli.NewApp()
 	app.Name = "n3iwf"
 	appLog.Infoln(app.Name)
-	appLog.Infoln("N3IWF version: ", version.GetVersion())
 	app.Usage = "-free5gccfg common configuration file -n3iwfcfg n3iwf configuration file"
 	app.Action = action
 	app.Flags = N3IWF.GetCliCmd()
