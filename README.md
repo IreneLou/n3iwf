@@ -68,6 +68,9 @@ source ~/.bashrc
 ```
 cd ~/irene/free5gc
 make n3iwf
+
+cd ~/moon_n3iwf
+go build -o bin/n3iwf -x n3iwf/n3iwf.go
 ```
 =============================================================
 1. 安裝模擬 My5G UE
